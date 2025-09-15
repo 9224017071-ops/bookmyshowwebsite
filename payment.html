@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets</title>
+    <link rel="icon" href="mylogo.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('bg.jfif');
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Center Box */
+        .container {
+            margin-top: 80px;
+            background: #232121;
+            display: inline-block;
+            padding: 30px 50px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            width: 250px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        button {
+            background: crimson;
+            color: white;
+            cursor: pointer;
+            width: 270px;
+        }
+
+        button:hover {
+            background: darkred;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 600px) {
+            .container {
+                width: 90% !important;
+                margin-top: 40px !important;
+                padding: 20px !important;
+            }
+
+            input, button {
+                width: 100% !important;
+                font-size: 14px !important;
+            }
+
+            h1 {
+                font-size: 20px !important;
+            }
+
+            body {
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Payment</h1>
+        <div class="form">
+            <label>Name</label><br>
+            <input type="text" id="payment-name" placeholder="Enter your name"><br>
+            <label>Total Amount</label><br>
+            <input type="number" id="payment" placeholder="Enter total amount"><br>
+            <button onclick="makePayment()">Confirm</button>
+        </div>
+    </div>
+
+    <script>
+        function makePayment() {
+            var name = document.getElementById('payment-name').value;
+            var amount = document.getElementById('payment').value;
+
+            if (name === "" || amount === "" || amount <= 0) {
+                alert("Fill the required fields");
+            } else {
+                alert("Payment Successful!\nName: " + name + "\nAmount: Rs." + amount);
+                window.location.href = "project 5.1.html"; // Redirect to homepage 
+            }
+        }
+    </script>
+
+</body>
+</html>

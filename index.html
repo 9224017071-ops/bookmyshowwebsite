@@ -1,0 +1,127 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow</title>
+    <link rel="icon" href="logo.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('d826dd9c-b2d7-44aa-825a-2ac7e0d31ff2.jfif') no-repeat center center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .login-container {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login {
+            background-color: white;
+            width: 350px;
+            height: auto;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .login h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .login form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login form label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .login form input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 10px;
+        }
+        .login form input:focus {
+            outline: none;
+            border: 1px solid blue;
+        }
+        .login form button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(0, 134, 139);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login form button:hover {
+            background-color: rgb(0, 134, 139);
+            cursor: pointer;
+        }
+        .login form button {
+            text-decoration: none;
+            color: inherit;
+        }
+        .login form p {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        /* ✅ Media Query Added Here */
+        @media (max-width: 600px) {
+            .login {
+                width: 90%;
+                padding: 15px;
+            }
+            .login form input,
+            .login form button {
+                width: 100%;
+            }
+            .login-container {
+                margin-top: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login">
+            <h2>Login</h2>
+            <form action="#">
+                <label>User Name</label>
+                <input type="text" id="username" placeholder="Enter your username" name="username">
+                <label>Password</label>
+                <input type="password" id="Password" placeholder="Enter your password" name="password">
+                <button onclick="login()" type="button">Login</button>
+                <p>Do you have register? <a href="dupeproject 5.1.html">Register</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function login(){
+            const username = document.getElementsByName('username')[0].value;
+            const password = document.getElementsByName('password')[0].value;
+            if(username === "Aathikha" && password === "09876"){
+                alert("Login Successful");
+                window.location.href ="Project 5.1.html";
+            }
+            else {
+                alert("Invalid Username or Password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

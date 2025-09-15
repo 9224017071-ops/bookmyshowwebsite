@@ -1,0 +1,122 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('bg.jfif');
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Center Box Design */
+    .container {
+      margin-top: 80px;
+      background: #232121;
+      display: inline-block;
+      padding: 30px 50px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(45, 42, 42, 0.5);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      width: 250px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    button {
+      background: crimson;
+      color: white;
+      cursor: pointer;
+      width: 270px;
+    }
+
+    button:hover {
+      background: darkred;
+    }
+
+    /* Media Query for Mobile Screens */
+    @media (max-width: 600px) {
+      .container {
+        width: 90%;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      input, select, button {
+        width: 100%;
+        font-size: 14px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Book Your Movie Tickets</h1>
+
+    <!-- Movie Name Dropdown -->
+    <select id="movieName">
+      <option>--choose--</option>
+      <option>Superman</option> 
+      <option>Demonslayer</option> 
+      <option>Zootopia 2</option> 
+      <option>Shinchan Movie</option> 
+      <option>Fantastic 4</option>    
+    </select>
+
+    <!-- Show Time Dropdown -->
+    <select id="showTime">
+      <option value="">-- Select Show Time --</option>
+      <option value="10:00 AM">10:00 AM</option>
+      <option value="1:00 PM">1:00 PM</option>
+      <option value="4:00 PM">4:00 PM</option>
+      <option value="7:00 PM">7:00 PM</option>
+    </select>
+
+    <!-- Number of Tickets Input -->
+    <input type="number" id="ticket-num" placeholder="Number of Tickets" min="1" />
+    <button onclick="booking()">Book Now</button>
+  </div>
+
+  <script>
+    function booking() {
+        var tickets = document.getElementById("ticket-num").value;
+        var price = 150;
+        var total = tickets * price;
+
+        if (tickets === "" || tickets <= 0) {
+            alert("Please fill the required fields");
+        } else {
+            alert("Ticket amount : Rs." + price +
+                  "   No. of Tickets : " + tickets +
+                  "   Total amount : Rs." + total);
+            window.location.href = "payment.html";
+        }
+    }
+  </script>
+</body>
+</html>
+
+
+</body>
+</html>

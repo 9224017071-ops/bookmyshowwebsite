@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .register-container{
+            background-color: lightblue;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .register{
+            background-color: white;
+            width: 350px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .register h2{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .register form label{
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 18px;
+            display: block;
+        }
+        .register form input[type="text"],
+        .register form input[type="email"],
+        .register form input[type="tel"],
+        .register form input[type="password"]{
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .register form input:focus{
+            outline: none;
+            border: 1px solid maroon;
+        }
+        .register form .gender{
+            margin-bottom: 15px;
+        }
+        .register form .gender label{
+            font-size: 16px;
+            font-weight: normal;
+            margin-right: 15px;
+            display: inline-block;
+        }
+        .register form button{
+            background: rgb(162, 123, 162);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            margin-top: 4px
+        }
+        .register form button:hover{
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+        .register form p{
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="register-container">
+    <div class="register">
+        <h2>Register</h2>
+        <form>
+            <div>
+                <label> Name</label>
+                <input type="text" placeholder="Enter your name" name="name" required>
+            </div>
+            <div>
+                <label> Email</label>
+                <input type="email" placeholder="Enter your email" name="email" required>
+            </div>
+            <div>
+                <label> Phone Number</label>
+                <input type="tel" placeholder="Enter your Phone Number" name="phone" required>
+            </div>
+            <div>
+                <label> City</label>
+                <input type="text" placeholder="Enter your city" name="city" required>
+            </div>
+            <div>
+                <label> Password</label>
+                <input type="password" placeholder="Enter your password" name="password" required>
+            </div>
+            <div class="gender">
+                <label><input type="radio" name="gender" value="male" required>Male</label>
+                <label><input type="radio" name="gender" value="female" required>Female</label>
+            </div>
+            <div class="course">
+                <select class="sub">
+                    <option>----select----</option>
+                    <option>BCA</option>
+                    <option>BBA</option>
+                    <option>BCom</option>
+                    <option>Bsc</option>
+                </select>
+            <button><a href="index.html ">Register</a></button>
+            <p>Already registered <a href="index.html ">login</a> </p>
+        </form>
+    </div>
+</div>
+</body>
+</html>

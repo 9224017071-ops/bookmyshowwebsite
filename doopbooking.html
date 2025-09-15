@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Book Tickets - Superman</title>
+  <style>
+    /* Background image settings */
+    body {
+      background: url('d826dd9c-b2d7-44aa-825a-2ac7e0d31ff2.jfif') no-repeat center center;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Booking form box */
+    .form-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      width: 320px;
+      margin: 100px auto;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-box img {
+      width: 150px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    /* Button design */
+    .btn {
+      background: crimson;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Book Tickets for the Show</h2>
+
+    <form id="bookingForm">
+      <!-- Movie Name Selection -->
+      <label>Movies:</label><br>
+      <select id="movieName">
+        <option value="Superman">Superman</option>
+        <option value="DemonSlayer">Demons DemonSlayer : S5</option>
+        <option value="Zootopia">Zootopia 2</option>
+        <option value="Shinchan">Shinchan Movie</option>
+        <option value="Fantastic4">Fantastic 4</option>
+      </select><br><br>
+
+      <!-- Show Time Selection -->
+      <label>Show Time:</label><br>
+      <select id="showTime">
+        <option value="10:00 AM">10:00 AM</option>
+        <option value="2:00 PM">2:00 PM</option>
+        <option value="6:00 PM">6:00 PM</option>
+        <option value="9:00 PM">9:00 PM</option>
+      </select><br><br>
+
+      <!-- Number of Tickets -->
+      <label>Number of Tickets:</label><br>
+      <input type="number" id="tickets" min="1" max="10" value="1"><br><br>
+
+      <button type="button" class="btn" onclick="calculateBill()">Book Now</button>
+    </form>
+
+    <!-- Output Message -->
+    <p id="message" style="margin-top:15px; font-weight:bold; color:green;"></p>
+  </div>
+
+  <script>
+    function calculateBill() {
+      const tickets = document.getElementById("tickets").value;
+      const show = document.getElementById("showTime").value;
+      const movie = document.getElementById("movieName").value;
+
+      let pricePerTicket = 200; // Example price
+      let total = tickets * pricePerTicket;
+
+      document.getElementById("message").innerText =
+        `🎉 Your booking for "${movie}" at ${show} is confirmed! Total Bill: ₹${total}`;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: crimson;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkred;
+    }
+
+    /* Modern Popup Message */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: black;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      z-index: 1000;
+      animation: fadeIn 0.5s ease;
+      width: 300px;
+    }
+    .popup h2 {
+      margin-bottom: 10px;
+      color: green;
+    }
+    .popup p {
+      margin-bottom: 15px;
+    }
+    .popup button {
+      background: crimson;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+    .popup button:hover {
+      background: darkred;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translate(-50%, -45%);}
+      to {opacity: 1; transform: translate(-50%, -50%);}
+    }
+
+    /* Dark overlay behind popup */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Book Your Movie Tickets</h1>
+
+    <input type="text" id="movieName" placeholder="Enter Movie Name" />
+    <select id="showTime">
+      <option value="10:00 AM">10:00 AM</option>
+      <option value="1:00 PM">1:00 PM</option>
+      <option value="4:00 PM">4:00 PM</option>
+      <option value="7:00 PM">7:00 PM</option>
+    </select>
+    <input type="number" id="tickets" placeholder="Number of Tickets" min="1" />
+    <button onclick="calculateBill()">Book Now</button>
+  </div>
+
+  <!-- Dark background overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Modern Popup -->
+  <div class="popup" id="popup">
+    <h2>Booking Confirmed 🎉</h2>
+    <p id="message"></p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+
+  <script>
+    function calculateBill() {
+      const tickets = document.getElementById("tickets").value;
+      const show = document.getElementById("showTime").value;
+      const movie = document.getElementById("movieName").value;
+
+      let pricePerTicket = 200;
+      let total = tickets * pricePerTicket;
+
+      if (!movie || tickets <= 0) {
+        document.getElementById("message").innerText = "⚠️ Please enter movie name and tickets.";
+      } else {
+        document.getElementById("message").innerText = 
+          `Your booking for "${movie}" at ${show} is confirmed! Total Bill: ₹${total}`;
+      }
+
+      // Show popup and overlay
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .login-container{
+            background-color: rgb(223, 179, 179);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login h2{
+            text-align: center;
+            margin-bottom: 10px;
+
+        }
+        .login{
+            background-color: white;
+            width: 350px;
+            height: 300px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .login form label{
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .login form input{
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 10px;/* top right bottom left*/
+        }
+        .login form input:focus{
+            outline: none;
+            border: 1px solid maroon;
+        }
+        .login form button{
+            background: rgb(162, 123, 162);
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            margin-left: 115px;
+        }
+        . button:hover{
+            
+            background-color: lightsalmon;
+            cursor: pointer;
+        }
+        .login p{
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Login Page</h1>
+
+    <input type="text" id="username" placeholder="username">
+    <input type="password" id="password" placeholder="password">
+    <button onclick="login()"><a href="project 5.1.html">login</a></button>
+     <p>Don't have an account?<a href="dupeproject 5.1.html">Register</a> </p>
+
+    <script>
+        function login(){
+            const username = document.getElementById('username').value;
+            const username = document.getElementById('username').value;
+            if(username === 'admin' && password === 'password'){
+                alert('Login Successfully');
+            } else {
+                alert('Invalid username or password. Please ty again');
+            }
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+  <!-- Notification Message -->
+  <div id="notification" class="notification"></div>
+ <script>
+    function calculateBill() {
+      const tickets = document.getElementById("tickets").value;
+      const show = document.getElementById("showTime").value;
+      const movie = document.getElementById("movieName").value;
+      const notification = document.getElementById("notification");
+
+      let pricePerTicket = 200;
+      let total = tickets * pricePerTicket;
+
+      if (!movie || tickets <= 0) {
+        notification.innerText = "⚠️ Please enter movie name and valid tickets.";
+        notification.classList.add("error");
+      } else {
+        notification.innerText = `🎉 Booking for "${movie}" at ${show} confirmed! Total Bill: ₹${total}`;
+        notification.classList.remove("error");
+      }
+
+      // Show notification at top
+      notification.style.display = "block";
+      setTimeout(() => { notification.style.top = "20px"; }, 100);
+
+      // Hide after 4 seconds
+      setTimeout(() => {
+        notification.style.top = "-80px";
+        setTimeout(() => { notification.style.display = "none"; }, 500);
+      }, 4000);
+    }
+  </script>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      margin-top: 60px;
+    }
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: crimson;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkred;
+    }
+
+    /* Top Notification */
+    .notification {
+      display: none;
+      position: fixed;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #28a745;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: top 0.5s ease;
+      font-size: 16px;
+    }
+    .notification.error {
+      background: #dc3545; /* Red for errors */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Book Your Movie Tickets</h1>
+
+    <input type="text" id="movieName" placeholder="Enter Movie Name" />
+    <select id="showTime">
+      <option value="10:00 AM">10:00 AM</option>
+      <option value="1:00 PM">1:00 PM</option>
+      <option value="4:00 PM">4:00 PM</option>
+      <option value="7:00 PM">7:00 PM</option>
+    </select>
+    <input type="number" id="tickets" placeholder="Number of Tickets" min="1" />
+    <button onclick="calculateBill()">Book Now</button>
+  </div>
+
+
+
+   <label>Number of Tickets</label>
+        <input type="number" id="tickets" placeholder="Enter tickets">
+
+        <button onclick="bookNow()">Book Now</button>
+    </div>
+
+    <script>
+        function bookNow() {
+            let movie = document.getElementById("movie").value;
+            let show = document.getElementById("show").value;
+            let tickets = document.getElementById("tickets").value;
+
+            if (movie === "" || show === "" || tickets === "" || tickets <= 0) {
+                alert("Please fill all the details properly!");
+                return;
+            }
+
+           
+
+            let price = prices[movie];
+            let total = price * tickets;
+
+            alert("Movie: " + movie + 
+                  "\nShow: " + show + 
+                  "\nTickets: " + tickets + 
+                  "\nTotal Price: ₹" + total);
+
+            window.location.href = "payment.html";
+        }
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow</title>
+    <link rel="icon" href="logo.png" type="image/icon type">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+         /* Background image settings */
+         body {
+            background: url('d826dd9c-b2d7-44aa-825a-2ac7e0d31ff2.jfif') no-repeat center center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+         }
+         .login-container {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+        .login {
+            background-color: white;
+            width: 350px;
+            height: auto;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        .login h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .login form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login form label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .login form input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid gray;
+            border-radius: 10px; /* top right bottom left*/
+        }
+        .login form input:focus {
+            outline: none;
+            border: 1px solid blue
+        }
+        .login form button {
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: rgb(0, 134, 139);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login form button:hover {
+            background-color: rgb(0, 134, 139);
+            cursor: pointer;
+        }
+        .login form button {
+            text-decoration: none;
+            color: inherit;
+        }
+        .login form p {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login">
+            <h2>Login</h2>
+            <form action="#">
+                <label>User Name</label>
+                <input type="text" id="username" placeholder="Enter your username" name="username">
+                <label>Password</label>
+                <input type="password" id="Password" placeholder="Enter your password" name="password">
+                <button onclick="login()" type="button">Login</button>
+                <p>Do you have register? <a href="dupeproject 5.1.html">Register</a></p>
+        
+            </form>
+        </div>
+    </div>
+    <script>
+        function login(){
+            const username = document.getElementsByName('username')[0].value;
+            const password = document.getElementsByName('password')[0].value;
+            if(username === "Aathikha" && password === "09876"){
+                alert("Login Successful");
+                window.location.href ="Project 5.1.html";
+            }
+           else {
+                alert("Invalid Username or Password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>

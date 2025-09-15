@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Tickets,Play,Sports,Events</title>
+    <link rel="icon" href="d:\Images\small logo.webp">
+    <link rel="stylesheet" href="project 5.1.css">
+    <style>
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1024px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 10px;
+            }
+            .section, .three {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section .movie, .pre .section .content {
+                width: 45%;
+            }
+            .three img {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section .movie, .pre .section .content, .three img {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+        <ul class="ul1" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
+            <li>Movies</li>
+            <li>Streams</li>
+            <li>Events</li>
+            <li>Plays</li>
+            <li>Sports</li>
+            <li>Activities</li>
+        </ul>
+        <ul class="ul2" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
+            <li>ListYourShow</li>
+            <li>Option</li>
+            <li>Offers</li>
+            <li><a href="project 5.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div style="background-color: azure;">
+        <img class="imagess" src="d:\Images\pro1.avif" width="1250px">
+    </div>
+
+    <div>
+        <div class="container">
+             <h1> Recommended Movies </h1>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="movie 1">
+            <a href="superman.html">
+                <img src="d:\Images\rec2.jpg" width="210px">
+            </a>
+            <h2>SuperMan</h2>
+            <p>Action/Scific</p>
+        </div>
+
+        <div class="movie 2">
+            <a href="demonslayer.html">
+                <img src="d:\Images\rec3.jpg" width="210px">
+            </a>
+            <h2>DemonSlayer:S5</h2>
+            <p>Anime/Action</p>
+        </div>
+
+        <div class="movie 3">
+            <a href="zootopia.html">
+                <img src="d:\Images\rec4.jpg" width="210px">
+            </a>
+            <h2>Zootopia: 2</h2>
+            <p>Animation/comedy</p>
+        </div>
+
+        <div class="movie 4">
+            <a href="shinchan.html">
+                <img src="d:\Images\rec5.jpg" width="210px">
+            </a>
+            <h2>Shinchan : Movie</h2>
+            <p>Animation/comedy</p>
+        </div>
+
+        <div class="movie 5">
+            <a href="fantastic4.html">
+                <img src="d:\Images\rec 1.jpg" width="210px">
+            </a>
+            <h2>Fantastic 4 : The First Step</h2>
+            <p>Action/Scific</p>
+        </div>
+    </div>
+
+    <div class="one">
+        <img src="d:\Images\small middle.avif" width="1250px">
+    </div>
+
+    <div class="two">
+        <h2>The Best Of Live Events</h2>
+    </div>
+    <div class="three">
+        <img src="d:\Images\op1.avif" width="200px">
+        <img src="d:\Images\op2.avif" width="200px">
+        <img src="d:\Images\op3.avif" width="200px">
+        <img src="d:\Images\op4.avif" width="200px">
+        <img src="d:\Images\op5.avif" width="200px">
+    </div>
+
+    <div class="pre">
+        <h1>Premieres</h1>
+        <h4>Brand new release every friday</h4>
+        <div class="section">
+            <div class="content">
+                <img src="d:\Images\p1.avif">
+                <h3>Diamanti</h3>
+                <p>English</p>
+            </div>
+            <div class="content">
+                <img src="d:\Images\p2.avif">
+                <h3>Entanglement</h3>
+                <p>English</p>
+            </div>
+            <div class="content">
+                <img src="d:\Images\p3.avif">
+                <h3>Spinal Top</h3>
+                <p>English</p>
+            </div>
+            <div class="content">
+                <img src="d:\Images\p4.avif">
+                <h3>Nimitta Matra</h3>
+                <p>Kanada</p>
+            </div>
+            <div class="content">
+                <img src="d:\Images\p5.avif">
+                <h3>28 Years Later</h3>
+                <p>English</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

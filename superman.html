@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Superman - Movie Details</title>
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgb(234, 223, 223);
+      color: black;
+      padding: 20px;
+    }
+
+    .ul1, .ul2 {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li { 
+      list-style: none;
+      margin-left: 10.5px;
+      margin-bottom: 0;
+      display: inline;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('rec2.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: white;
+    }
+
+    .movie-section {
+      display: flex;
+      align-items: flex-start;
+      padding: 40px;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
+    }
+
+    .poster img {
+      width: 220px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .movie-info {
+      margin-left: 30px;
+      max-width: 600px;
+    }
+
+    .Rating {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .title {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .details {
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #ddd;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin-top: 30px;
+      margin-right: 10px;
+      padding: 10px 20px;
+      background: #ff004f;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .buttons a:hover {
+      background: #e60047;
+    }
+
+    .about {
+      background: white;
+      color: black;
+      padding: 30px;
+      font-size: 16px;
+    }
+
+    .about h2 {
+      margin-bottom: 10px;
+    }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 1024px) {
+      nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .movie-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+      }
+      .movie-info {
+        margin-left: 0;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 22px;
+      }
+      .tags, .details, .Rating {
+        font-size: 12px;
+      }
+      .buttons a {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .movie-section {
+        padding: 10px;
+      }
+      .poster img {
+        width: 180px;
+      }
+      .title {
+        font-size: 18px;
+      }
+      .tags, .details, .Rating {
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav style="display: flex; justify-content: space-between; align-items: center;">
+    <ul class="ul1" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
+        <li>Movies</li>
+        <li>Streams</li>
+        <li>Events</li>
+        <li>Plays</li>
+        <li>Sports</li>
+        <li>Activities</li>
+    </ul>
+    <ul class="ul2" style="display: flex; gap: 20px; list-style: none; margin: 0; padding: 0;">
+        <li>ListYourShow</li>
+        <li>Option</li>
+        <li>Offers</li>
+        <li><a href="project 5.1.html">Home</a></li>
+    </ul>
+  </nav>
+
+  <div class="movie-section">
+    <div class="poster">
+      <img src="rec2.jpg" alt="Superman Movie Poster">
+    </div>
+
+    <div class="movie-info">
+      <div class="title">Superman</div>
+      <div class="Rating">Ratings: 3.7/5</div>
+      <div class="tags">4K • English • Audio(4), Subtitles(1)</div>
+      <div class="details">2h 10m • Action, Adventure, Fantasy, Sci-Fi • UA13+ • 11 Jul, 2025</div>
+
+      <div class="buttons">
+        <a href="booking.html">Book Tickets</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="about">
+    <h2>About the movie</h2>
+    <p>In his signature style, James Gunn takes on the original superhero in the newly imagined DC universe with a singular blend of epic action, humor, and heart, delivering a Superman who's driven by compassion and an inherent belief in the goodness of humankind.</p>
+  </div>
+
+</body>
+</html>
